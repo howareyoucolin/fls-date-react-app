@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class A extends React.Component {
+import Header from './components/header';
+
+class Home extends React.Component {
 	render() {
 		return (
 			<div className="main">
-				This is our very first react home page.
+				<Header />
 			</div>
 		)
 	}
 };
 
-ReactDOM.render(<A />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));
