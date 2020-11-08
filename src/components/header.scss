@@ -1,0 +1,44 @@
+@import '../includes/variables.scss';
+
+.header{
+	height:60px;
+	line-height:60px;
+	background:$themeColor;
+	
+	a{
+		color:$white;
+		text-decoration:none;
+	}
+	
+	h1{
+		> a{
+			float:left;
+			font-weight:normal;
+		}
+	}
+	
+	.signin{
+		float:right;
+		line-height:60px;
+		color:$white;
+		padding:0 10px;
+		margin-right:10px;
+	}
+	
+	.signup{
+		float:right;
+		line-height:60px;
+		background:$lightBlack;
+		color:$white;
+		padding:0 10px;
+		
+		@include mobile{
+			margin-right:-15px;
+			
+			span{
+				display:none;
+			}
+		}
+	}
+	
+}

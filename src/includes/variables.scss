@@ -1,0 +1,11 @@
+//Colors
+$white: #FFF;
+$lightBlack: #474747;
+$themeColor: #D72171;
+
+//Media Queries
+@mixin mobile{
+  @media only screen and (max-width: 680px){
+    @content;
+  }
+}
