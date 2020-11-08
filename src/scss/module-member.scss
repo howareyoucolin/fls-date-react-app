@@ -1,0 +1,34 @@
+@import './variables.scss';
+
+.member{
+	margin-bottom:30px;
+	clear:both;
+	
+	h2{
+		margin-bottom:10px;
+		
+		a{
+			color:$black;
+		}
+	}
+	
+	b{
+		color:$themeColor;
+	}
+	
+	img{
+		width:200px;
+		float:left;
+		margin:0 25px 0 0;
+		
+		@include mobile{
+			width:80px;
+			margin:0 10px 10px 0;
+		} 
+	}
+	
+	p{
+		text-align:justify;
+	}
+	
+}

@@ -9,7 +9,11 @@ class Home extends React.Component {
 		return (
 			<div className="app">
 				<Header />
-				<MemberList />
+				<div className="main">
+					<div className="container">
+						<MemberList />
+					</div>
+				</div>
 			</div>
 		)
 	}

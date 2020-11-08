@@ -7,16 +7,12 @@ class MemberList extends React.Component {
 	
 	render() {
 		return (
-			<div className="main">
-				<div className="container">
-					<div className="content">
-						<Member />
-						<Member />
-						<Member />
-						<Member />
-						<Member />
-					</div>
-				</div>
+			<div className="memberList">
+				<Member />
+				<Member />
+				<Member />
+				<Member />
+				<Member />
 			</div>
 		)
 	}
