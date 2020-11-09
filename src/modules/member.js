@@ -5,7 +5,7 @@ import '~/src/scss/module-member.scss';
 
 class Member extends React.Component {
 	
-	componentWillMount() {
+	componentDidMount() {
 		this.baseUrl = '//'+window.location.hostname+'/';
 	}
 	

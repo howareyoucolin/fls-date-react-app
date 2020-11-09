@@ -5,7 +5,7 @@ import '~/src/scss/component-header.scss';
 
 class Header extends React.Component {
 	
-	componentWillMount() {
+	componentDidMount() {
 		this.baseUrl = '//'+window.location.hostname+'/';
 	}
 	
