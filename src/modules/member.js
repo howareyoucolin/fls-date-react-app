@@ -10,26 +10,39 @@ class Member extends React.Component {
 	}
 	
 	render() {
+		
+		let memberUrl = this.baseUrl+'member/'+this.props.id;
+		let name = this.props.name;
+		let intro = this.props.intro;
+		let wechat = this.props.wechat;
+		let age = this.props.age;
+		let gender = this.props.gender;
+		let imageUrl = this.props.imageUrl;
+		let imageAlt = this.props.superTitle;
+		
 		return (
 			<div className="member">
 				<div className="wrap">
-					<a href={this.baseUrl+'member/16'}>
-						<img src="https://www.flushingdating.com/uploads/9603e03806ae31df86e279b01a603108.jpg" alt="法拉盛理工男诚征女朋友" />
+					<a href={memberUrl}>
+						<img src={imageUrl} alt={imageAlt} />
 					</a>
 					<div>
 						<p>
-							Colin Zhao , 18 , 男生<br/>
-							微信: <b>colin6478828</b><br/>
+							{name} , {age} , {gender}<br/>
+							{
+								wechat && 
+									<>微信: <b>{wechat}</b><br/></>
+							}
 						</p>
 						<p className="intro">
-							身高177厘米,  来自广东, 18岁移民来美国, 在纽约法拉盛住了差不多十多年, 在Queens College读数学与计算机的专业, 从事IT行业, 现在在美国人大公司里担任Senior Software Engineer ...
-							<a href={this.baseUrl+'member/16'}>[更多]</a>
+							{intro} ...
+							<a href={memberUrl}>[更多]</a>
 						</p>
 					</div>
 				</div>
 				<p className="intro">
-						身高177厘米,  来自广东, 18岁移民来美国, 在纽约法拉盛住了差不多十多年, 在Queens College读数学与计算机的专业, 从事IT行业, 现在在美国人大公司里担任Senior Software Engineer ...
-						<a href={this.baseUrl+'member/16'}>[更多]</a>
+						{intro} ...
+						<a href={memberUrl}>[更多]</a>
 				</p>
 			</div>
 		)
