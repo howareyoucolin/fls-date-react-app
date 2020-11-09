@@ -35,14 +35,14 @@ class Member extends React.Component {
 							}
 						</p>
 						<p className="intro">
-							{intro} ...
-							<a href={memberUrl}>[更多]</a>
+							{intro} ... <br/>
+							<a href={memberUrl}>[查看资料]</a>
 						</p>
 					</div>
 				</div>
 				<p className="intro">
-						{intro} ...
-						<a href={memberUrl}>[更多]</a>
+						{intro} ... <br/>
+						<a href={memberUrl}>[查看资料]</a>
 				</p>
 			</div>
 		)
