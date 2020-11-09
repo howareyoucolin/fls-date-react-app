@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import '../scss/module-member.scss';
+import '~/src/scss/module-member.scss';
 
 class Member extends React.Component {
 	

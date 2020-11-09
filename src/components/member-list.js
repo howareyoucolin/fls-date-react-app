@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import axios from 'axios';
 
-import Member from '../modules/member';
+import Member from '~/src/modules/member';
 
 class MemberList extends React.Component {
 	
