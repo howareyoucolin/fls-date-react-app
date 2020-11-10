@@ -8,8 +8,8 @@ app.use('/assets', express.static(path.resolve('./') + '/assets'));
 app.use('/dist', express.static(path.resolve('./') + '/dist'));
 
 //Index.html
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname + '/html/home.html'));
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(path.resolve('./') + '/html/app.html'));
 });
 
 app.listen(80, () => {

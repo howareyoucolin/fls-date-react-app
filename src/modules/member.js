@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from "react-router-dom";
 
 import '~/src/scss/module-member.scss';
 
 class Member extends React.Component {
 	
-	componentDidMount() {
-		this.baseUrl = '//'+window.location.hostname+'/';
-	}
-	
 	render() {
-		
-		let memberUrl = this.baseUrl+'member/'+this.props.id;
+
+		let id = this.props.id;
 		let name = this.props.name;
 		let intro = this.props.intro;
 		let wechat = this.props.wechat;
@@ -23,9 +20,9 @@ class Member extends React.Component {
 		return (
 			<div className="member">
 				<div className="wrap">
-					<a href={memberUrl}>
+					<Link to={'member/'+id}>
 						<img src={imageUrl} alt={imageAlt} />
-					</a>
+					</Link>
 					<div>
 						<p>
 							{name} , {age} , {gender}<br/>
@@ -36,13 +33,13 @@ class Member extends React.Component {
 						</p>
 						<p className="intro">
 							{intro} ... <br/>
-							<a href={memberUrl}>[查看资料]</a>
+							<Link to={'member/'+id}>[查看资料]</Link>
 						</p>
 					</div>
 				</div>
 				<p className="intro">
 						{intro} ... <br/>
-						<a href={memberUrl}>[查看资料]</a>
+						<Link to={'member/'+id}>[查看资料]</Link>
 				</p>
 			</div>
 		)
