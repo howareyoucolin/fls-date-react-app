@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import Header from '~/src/components/header';
-import MemberList from '~/src/components/member-list';
+import Home from '~/src/templates/home';
+import MemberPage from '~/src/templates/member-page';
 
 class App extends React.Component {
 	render() {
@@ -15,21 +15,11 @@ class App extends React.Component {
 					<Switch>
 					
 						<Route path="/member">
-							<Header />
-							<div className="main">
-								<div className="container">
-									<p>This is member page!</p>
-								</div>
-							</div>
+							<MemberPage />
 						</Route>
 					
 						<Route path="/">
-							<Header />
-							<div className="main">
-								<div className="container">
-									<MemberList />
-								</div>
-							</div>
+							<Home />
 						</Route>
 						
 					</Switch>
