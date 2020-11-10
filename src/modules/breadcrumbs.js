@@ -8,8 +8,8 @@ class BreadCrumbs extends React.Component {
 	
 	render() {
 		
-		const crumbsItems =  this.props.items.map(item =>
-			<React.Fragment>
+		const crumbsItems =  this.props.items.map((item, key) =>
+			<React.Fragment key={key}>
 				&gt;&gt;
 				{
 					typeof item.url !== 'undefined' ? 
