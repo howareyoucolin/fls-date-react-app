@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+.memberDetail{
+
+	.profile{
+		margin:15px 0 25px;
+		background:$white;
+		display:flex;
+		flex-direction:row;
+		
+		img{
+			width:300px;
+			margin:0;
+			
+			@include mobile{
+				width:100%;
+			} 
+		}
+		
+		> div{
+			flex-grow:1;
+			margin:0 15px;
+			
+			@include mobile{
+				padding-bottom:15px;
+			} 
+		}
+		
+		p{
+			border-bottom:1px dashed $lightGray;
+			line-height:37px;
+			margin:0;
+			
+			b{
+				color:$themeColor;
+			}
+			
+			span{
+				color:$lightGray;
+			}
+		}
+		
+		@include mobile{
+			display:block;
+		} 
+		
+	}
+
+}

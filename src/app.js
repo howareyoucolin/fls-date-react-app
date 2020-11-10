@@ -13,15 +13,8 @@ class App extends React.Component {
 				<BrowserRouter>
 			
 					<Switch>
-					
-						<Route path="/member">
-							<MemberPage />
-						</Route>
-					
-						<Route path="/">
-							<Home />
-						</Route>
-						
+						<Route path="/member/:id" component={MemberPage} />
+						<Route path="/" component={Home} />
 					</Switch>
 					
 				</BrowserRouter>
