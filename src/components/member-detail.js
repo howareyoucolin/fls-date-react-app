@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import axios from 'axios';
+import {unEscapeLineBreak} from '~/src/includes/functions';
 
 import BreadCrumbs from '~/src/modules/breadcrumbs';
 
@@ -71,14 +72,14 @@ class MemberDetail extends React.Component {
 								aboutMe &&
 								<>
 									<h3>基本资料</h3>
-									<div dangerouslySetInnerHTML={{ __html: aboutMe }}></div>
+									<div>{unEscapeLineBreak(aboutMe)}</div>
 								</>
 							}
 							{
 								preference &&
 								<>
 									<h3>喜欢什么样的{oppositeGender}</h3>
-									<div dangerouslySetInnerHTML={{ __html: preference }}></div>
+									<div>{unEscapeLineBreak(preference)}</div>
 								</>
 							}
 						</div>
