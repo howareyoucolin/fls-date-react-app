@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.breadCrumbs{
+
+	color:$lightBlack;
+	margin-bottom: 25px;
+    font-size: 14px;
+	
+	a{
+		color:$gray;
+		text-decoration:underline;
+	}
+
+}

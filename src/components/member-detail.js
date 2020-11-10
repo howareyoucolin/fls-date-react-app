@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import axios from 'axios';
 
+import BreadCrumbs from '~/src/modules/breadcrumbs';
+
 import '~/src/scss/component-member-detail.scss';
 
 class MemberDetail extends React.Component {
@@ -39,6 +41,13 @@ class MemberDetail extends React.Component {
 		
 		return (
 			<div className="memberDetail">
+			
+				<BreadCrumbs 
+					items={[
+						{label:superTitle}
+					]}
+				/>
+			
 				<h2>{superTitle}</h2>
 				<div className="profile">
 					<img src={imageUrl} alt={superTitle} />
