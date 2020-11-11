@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Header from '~/src/components/header';
 import MemberDetail from '~/src/components/member-detail';
+import Footer from '~/src/components/footer';
 
 class MemberPage extends React.Component {
 	
@@ -20,6 +20,7 @@ class MemberPage extends React.Component {
 						<MemberDetail id={this.id} />
 					</div>
 				</div>
+				<Footer />
 			</>
 		)
 	}
