@@ -15,7 +15,7 @@ const Footer = (props) => {
 	
 	const postList = posts.map((post, key) =>
 		<li key={key}>
-			<Link to={'/blog/'+post.title}>{post.title}</Link>
+			<Link to={'/blog/'+post.slug}>{post.title}</Link>
 		</li>
 	);
 	
