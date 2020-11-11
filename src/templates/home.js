@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from '~/src/components/header';
 import MemberList from '~/src/components/member-list';
+import Footer from '~/src/components/footer';
 
 class Home extends React.Component {
 	render() {
@@ -14,6 +15,7 @@ class Home extends React.Component {
 						<MemberList />
 					</div>
 				</div>
+				<Footer />
 			</>
 		)
 	}
