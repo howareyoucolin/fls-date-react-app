@@ -15,7 +15,7 @@ class MemberList extends React.Component {
   }
 	
 	componentDidMount() {
-    axios.get('https://api.369usa.com/members')
+    axios.get('https://api.369usa.com/members/')
       .then(res => {
         const members = res.data;
         this.setState({ members });
