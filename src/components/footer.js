@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom";
 import axios from 'axios'
 
 const Footer = (props) => {
@@ -15,7 +14,7 @@ const Footer = (props) => {
 	
 	const postList = posts.map((post, key) =>
 		<li key={key}>
-			<Link to={'/blog/'+post.slug}>{post.title}</Link>
+			<a href={'/blog/'+post.slug}>{post.title}</a>
 		</li>
 	);
 	
@@ -25,8 +24,8 @@ const Footer = (props) => {
 			<h3>婚恋博客文章</h3>
 			<ul>{postList}</ul>
 			<div>
-				<Link to='/sitemap'>网站地图</Link> &nbsp;&nbsp;
-				<Link to='/world-single-union'>世界单身联谊会</Link> &nbsp;&nbsp;
+				<a href='/sitemap'>网站地图</a> &nbsp;&nbsp;
+				<a href='/world-single-union'>世界单身联谊会</a> &nbsp;&nbsp;
 			</div>
 		</div>
 		</div>
