@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux'
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+
+import Store from '~/src/redux/store';
 
 import Home from '~/src/templates/home';
 import MemberPage from '~/src/templates/member-page';
@@ -26,4 +29,10 @@ class App extends React.Component {
 	}
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<Provider store={Store}>
+		<App />
+	</Provider>
+	, 
+	document.getElementById('root')
+);

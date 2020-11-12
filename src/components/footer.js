@@ -1,18 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
 import axios from 'axios'
 
 const Footer = (props) => {
 	
-	const [posts, setPosts] = useState([]);
-	
 	useEffect(() => {
-    axios.get('https://api.369usa.com/posts/')
-		.then(result => {
-			setPosts(result.data);
-		})
+		axios.get('https://api.369usa.com/posts/')
+      .then(result => {
+        props.initPosts(result.data);
+      })
   }, []);
 	
-	const postList = posts.map((post, key) =>
+	const postList = props.posts.map((post, key) =>
 		<li key={key}>
 			<a href={'/blog/'+post.slug}>{post.title}</a>
 		</li>
@@ -32,4 +31,19 @@ const Footer = (props) => {
 	);
 }
 
-export default Footer;
+const mapStateToProps = state => {
+  return {
+    posts: state.posts
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    initPosts: (data) => dispatch({ type: 'INIT_POSTS', payload: data })
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Footer);
