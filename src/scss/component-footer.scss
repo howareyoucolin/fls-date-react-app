@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.footer{
+
+	h3{
+		a{
+			color:$white;
+		}
+	}
+	
+	a{
+		&:hover{
+			color:$white;
+		}
+	}
+
+}

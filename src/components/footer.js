@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {initPosts} from '~/src/actions/postActions'
+import '~/src/scss/component-footer.scss'
 
 const Footer = (props) => {
 	
@@ -8,7 +9,7 @@ const Footer = (props) => {
 		props.initPosts();
   }, [])
 	
-	const postList = props.posts.map((post, key) => {
+	const postList = props.posts.slice(0, 5).map((post, key) => {
 		let {post_name, post_title} = post
 		return (
 			<li key={key}>
@@ -20,7 +21,11 @@ const Footer = (props) => {
 	return (
 		<div className="footer">
 		<div className="container">
-			<h3>婚恋博客文章</h3>
+			<h3>
+				<a href='/blog'>
+					婚恋博客文章
+				</a>
+			</h3>
 			<ul>{postList}</ul>
 			<div>
 				<a href='/sitemap'>网站地图</a> &nbsp;&nbsp;
