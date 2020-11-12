@@ -1,47 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, {useEffect} from 'react'
+import {connect} from 'react-redux'
+import axios from 'axios'
+import {fetchMembers} from '~/src/actions/memberActions'
+import MemberCard from '~/src/modules/memberCard'
 
-import axios from 'axios';
-
-import Member from '~/src/modules/member';
-
-class MemberList extends React.Component {
+const MemberList = (props) => {
 	
-	constructor(props) {
-    super(props);
-    this.state = {
-			members: []
-		};
+	useEffect(() => {
+		props.initMembers()
+  }, [])
+	
+	const membersList = props.members.map((member) =>
+		<MemberCard key={member.id} member={member} />
+	)
+	
+	return (
+		<div className="memberList">
+			{membersList}
+		</div>
+	)
+	
+}
+
+const mapStateToProps = state => {
+  return {
+    members: state.members.members
   }
-	
-	componentDidMount() {
-    axios.get('https://api.369usa.com/members/')
-      .then(res => {
-        const members = res.data;
-        this.setState({ members });
-      })
-  }
-	
-	render() {
-		const membersList = this.state.members.map((member) =>
-			<Member 
-				key={member.id}
-				id={member.id}
-				name={member.name}
-				age={member.age}
-				gender={member.gender}
-				superTitle={member.superTitle}
-				intro={member.intro}
-				imageUrl={member.imageUrl}
-				wechat={member.wechat}
-			/>
-		);
-		return (
-			<div className="memberList">
-				{membersList}
-			</div>
-		)
-	}
-};
+}
 
-export default MemberList;
+const mapDispatchToProps = dispatch => {
+  return {
+    initMembers: () => dispatch(fetchMembers())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MemberList)

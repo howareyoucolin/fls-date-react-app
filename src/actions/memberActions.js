@@ -8,3 +8,12 @@ export function fetchMember(id){
       })
 	}
 }
+
+export function fetchMembers(){
+	return dispatch => {
+		axios.get('https://api.369usa.com/members/')
+      .then(result => {
+				dispatch({type:'INIT_MEMBERS', payload: result.data});
+      })
+	}
+}

@@ -1,6 +1,7 @@
 const initialState = {
-  member: {}
-};
+  member: {},
+	members: []
+}
 
 export default function memberReducer(state = initialState, action){
 	if (action.type === 'INIT_MEMBER'){
@@ -9,5 +10,11 @@ export default function memberReducer(state = initialState, action){
       member: action.payload
     }
 	}
-  return state;
-};
+	else if (action.type === 'INIT_MEMBERS'){
+		return {
+      ...state,
+      members: action.payload
+    }
+	}
+  return state
+}
