@@ -1,20 +1,19 @@
-import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
+import React, {useEffect} from 'react'
+import {connect} from 'react-redux'
 import axios from 'axios'
-
-import {fetchPosts} from '~/src/actions/postActions';
+import {fetchPosts} from '~/src/actions/postActions'
 
 const Footer = (props) => {
 	
 	useEffect(() => {
 		props.initPosts();
-  }, []);
+  }, [])
 	
 	const postList = props.posts.map((post, key) =>
 		<li key={key}>
 			<a href={'/blog/'+post.slug}>{post.title}</a>
 		</li>
-	);
+	)
 	
 	return (
 		<div className="footer">
@@ -27,7 +26,7 @@ const Footer = (props) => {
 			</div>
 		</div>
 		</div>
-	);
+	)
 }
 
 const mapStateToProps = state => {
@@ -45,4 +44,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Footer);
+)(Footer)
