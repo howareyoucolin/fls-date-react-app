@@ -2,13 +2,12 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios'
 
+import {fetchPosts} from '~/src/actions/postActions';
+
 const Footer = (props) => {
 	
 	useEffect(() => {
-		axios.get('https://api.369usa.com/posts/')
-      .then(result => {
-        props.initPosts(result.data);
-      })
+		props.initPosts();
   }, []);
 	
 	const postList = props.posts.map((post, key) =>
@@ -39,7 +38,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initPosts: (data) => dispatch({ type: 'INIT_POSTS', payload: data })
+    initPosts: () => dispatch(fetchPosts())
   }
 }
 
