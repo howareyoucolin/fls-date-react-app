@@ -1,4 +1,5 @@
-import { createStore } from 'redux'
+import {createStore, applyMiddleware} from 'redux';
+import {logger} from 'redux-logger';
 
 const initialState = {
   posts: []
@@ -14,6 +15,6 @@ function postReducer(state = initialState, action){
   return state;
 };
 
-const Store = createStore(postReducer);
+const Store = createStore(postReducer, applyMiddleware(logger));
 
 export default Store;
