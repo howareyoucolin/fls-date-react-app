@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '~/src/components/header'
-import PostDetail from '~/src/components/post-detail'
+import BlogDetail from '~/src/components/blog-detail'
 import Footer from '~/src/components/footer'
 
 export default function Post(props){
@@ -10,7 +10,7 @@ export default function Post(props){
 			<Header />
 			<div className="main">
 				<div className="container">
-					<PostDetail />
+					<BlogDetail />
 				</div>
 			</div>
 			<Footer />

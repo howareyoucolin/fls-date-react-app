@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Link} from "react-router-dom";
-
-import '~/src/scss/module-breadcrumbs.scss';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import '~/src/scss/module-breadcrumbs.scss'
 
 class BreadCrumbs extends React.Component {
 	
@@ -13,7 +11,7 @@ class BreadCrumbs extends React.Component {
 				&gt;&gt;
 				{
 					typeof item.url !== 'undefined' ? 
-					<Link to={item.url}>{item.label}</Link> :
+					<a href={item.url}>{item.label}</a> :
 					<span>{item.label}</span>
 				}
 			</React.Fragment>
@@ -21,7 +19,7 @@ class BreadCrumbs extends React.Component {
 		
 		return (
 			<div className="breadCrumbs">
-				<Link to='/'>首页</Link> 
+				<a href='/'>首页</a> 
 				{crumbsItems}
 			</div>
 		)

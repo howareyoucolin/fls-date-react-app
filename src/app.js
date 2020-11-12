@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {BrowserRouter, Switch, Route} from "react-router-dom";
-
-import Store from '~/src/store';
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import Store from '~/src/store'
 import Home from '~/src/templates/home';
-import MemberPage from '~/src/templates/member-page';
-import Post from '~/src/templates/post';
+import MemberPage from '~/src/templates/member-page'
+import Blog from '~/src/templates/blog'
+import Post from '~/src/templates/post'
 
 class App extends React.Component {
 	render() {
@@ -17,6 +16,7 @@ class App extends React.Component {
 				<BrowserRouter>
 			
 					<Switch>
+						<Route exact path="/blog" component={Blog} />
 						<Route path="/blog/:slug" component={Post} />
 						<Route path="/member/:id" component={MemberPage} />
 						<Route path="/" component={Home} />
@@ -27,7 +27,7 @@ class App extends React.Component {
 			</div>
 		)
 	}
-};
+}
 
 ReactDOM.render(
 	<Provider store={Store}>
@@ -35,4 +35,4 @@ ReactDOM.render(
 	</Provider>
 	, 
 	document.getElementById('root')
-);
+)

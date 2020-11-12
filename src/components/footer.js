@@ -8,11 +8,14 @@ const Footer = (props) => {
 		props.initPosts();
   }, [])
 	
-	const postList = props.posts.map((post, key) =>
-		<li key={key}>
-			<a href={'/blog/'+post.slug}>{post.title}</a>
-		</li>
-	)
+	const postList = props.posts.map((post, key) => {
+		let {post_name, post_title} = post
+		return (
+			<li key={key}>
+				<a href={`/blog/${post_name}`}>{post_title}</a>
+			</li>
+		)
+	})
 	
 	return (
 		<div className="footer">
