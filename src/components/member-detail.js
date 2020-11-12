@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {fetchMember} from '~/src/actions/memberActions'
+import {initMember} from '~/src/actions/memberActions'
 import {unEscapeLineBreak} from '~/src/includes/functions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
 import '~/src/scss/component-member-detail.scss'
@@ -84,7 +84,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initMember: (id) => dispatch(fetchMember(id))
+    initMember: (id) => dispatch(initMember(id))
   }
 }
 

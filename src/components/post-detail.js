@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {fetchPost} from '~/src/actions/postActions'
+import {initPost} from '~/src/actions/postActions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
 
 const PostDetail = (props) => {
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initPost: (slug) => dispatch(fetchPost(slug))
+    initPost: (slug) => dispatch(initPost(slug))
   }
 }
 

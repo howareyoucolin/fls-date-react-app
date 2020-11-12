@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {fetchPosts} from '~/src/actions/postActions'
+import {initPosts} from '~/src/actions/postActions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
 import {getExcerpt} from '~/src/includes/functions'
 
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initPosts: () => dispatch(fetchPosts())
+    initPosts: () => dispatch(initPosts())
   }
 }
 

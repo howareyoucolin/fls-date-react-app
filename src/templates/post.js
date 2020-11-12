@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import {getExcerpt, seo} from '~/src/includes/functions'
-import {fetchPost} from '~/src/actions/postActions'
+import {initPost} from '~/src/actions/postActions'
 import Header from '~/src/components/header'
 import PostDetail from '~/src/components/post-detail'
 import Footer from '~/src/components/footer'
@@ -48,7 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initPost: (slug) => dispatch(fetchPost(slug))
+    initPost: (slug) => dispatch(initPost(slug))
   }
 }
 

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import {getExcerpt, seo} from '~/src/includes/functions'
-import {fetchMember} from '~/src/actions/memberActions'
+import {initMember} from '~/src/actions/memberActions'
 import Header from '~/src/components/header'
 import MemberDetail from '~/src/components/member-detail'
 import Footer from '~/src/components/footer'
@@ -47,7 +47,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initMember: (id) => dispatch(fetchMember(id))
+    initMember: (id) => dispatch(initMember(id))
   }
 }
 

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {fetchPosts} from '~/src/actions/postActions'
+import {initPosts} from '~/src/actions/postActions'
 
 const Footer = (props) => {
 	
@@ -39,7 +39,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initPosts: () => dispatch(fetchPosts())
+    initPosts: () => dispatch(initPosts())
   }
 }
 
