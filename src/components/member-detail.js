@@ -1,10 +1,8 @@
-import React from 'react';
-import axios from 'axios';
-import {unEscapeLineBreak} from '~/src/includes/functions';
-
-import BreadCrumbs from '~/src/modules/breadcrumbs';
-
-import '~/src/scss/component-member-detail.scss';
+import React from 'react'
+import axios from 'axios'
+import {unEscapeLineBreak} from '~/src/includes/functions'
+import BreadCrumbs from '~/src/modules/breadcrumbs'
+import '~/src/scss/component-member-detail.scss'
 
 class MemberDetail extends React.Component {
 	
