@@ -1,23 +1,18 @@
-import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import axios from 'axios';
-
-import BreadCrumbs from '~/src/modules/breadcrumbs';
+import React, {useEffect} from 'react'
+import {useParams} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {fetchPost} from '~/src/actions/postActions'
+import BreadCrumbs from '~/src/modules/breadcrumbs'
 
 const PostDetail = (props) => {
 	
-	const {slug} = useParams();
-	
-	const [post, setPost] = useState({});
+	const {slug} = useParams()
 	
 	useEffect(() => {
-		axios.get('https://api.369usa.com/post/?slug='+slug)
-		.then(result => {
-			setPost(result.data);
-		})
-	}, [slug]);
+		props.initPost(slug)
+  }, [slug])
 	
-	let {post_title, post_date, post_content} = post;
+	const {post_title, post_date, post_content} = props.post;
 	
 	return (
 		<div className="postDetail">
@@ -34,7 +29,22 @@ const PostDetail = (props) => {
 			<div dangerouslySetInnerHTML={{ __html: post_content }}></div>
 			
 		</div>
-	);
+	)
 }
 
-export default PostDetail;
+const mapStateToProps = state => {
+  return {
+    post: state.posts.post
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    initPost: (slug) => dispatch(fetchPost(slug))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PostDetail)

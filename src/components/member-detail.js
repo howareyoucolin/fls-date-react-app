@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import {fetchMember} from '~/src/actions/memberActions'
 import {unEscapeLineBreak} from '~/src/includes/functions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'

@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import {fetchMembers} from '~/src/actions/memberActions'
 import MemberCard from '~/src/modules/memberCard'
 
