@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {initMember} from '~/src/actions/memberActions'
 import {unEscapeLineBreak} from '~/src/includes/functions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
+import Text from '~/src/elements/text'
 import '~/src/scss/component-member-detail.scss'
 
 const MemberDetail = (props) => {
@@ -48,7 +49,7 @@ const MemberDetail = (props) => {
 				</div>
 			</div>
 
-			<div>
+			<Text>
 				{
 					content ? 
 					<div dangerouslySetInnerHTML={{ __html: content }}></div>
@@ -70,7 +71,8 @@ const MemberDetail = (props) => {
 						}
 					</div>
 				}
-			</div>
+			</Text>
+			
 		</div>
 	)
 

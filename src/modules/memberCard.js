@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Text from '~/src/elements/text'
 import '~/src/scss/module-member.scss'
 
 const MemberCard = (props) => {
@@ -29,10 +30,10 @@ const MemberCard = (props) => {
 								<>微信: <b>{wechat}</b><br/></>
 						}
 					</p>
-					<p className="intro">
-						{intro} ... <br/>
+					<Text className="intro">
+						{intro} ... <br />
 						<Link to={'member/'+id}>[查看资料]</Link>
-					</p>
+					</Text>
 				</div>
 			</div>
 			<p className="intro">

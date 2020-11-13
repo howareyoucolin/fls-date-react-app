@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {initPost} from '~/src/actions/postActions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
+import Text from '~/src/elements/text'
 
 const PostDetail = (props) => {
 	
@@ -26,7 +27,9 @@ const PostDetail = (props) => {
 				
 			<h2>{post_title}</h2>
 			<p>发表于: {post_date}</p>
-			<div dangerouslySetInnerHTML={{ __html: post_content }}></div>
+			<Text>
+				<div dangerouslySetInnerHTML={{ __html: post_content }}></div>
+			</Text>
 			
 		</div>
 	)

@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {initPosts} from '~/src/actions/postActions'
 import BreadCrumbs from '~/src/modules/breadcrumbs'
+import Text from '~/src/elements/text'
 import {getExcerpt} from '~/src/includes/functions'
 
 const blogDetail = (props) => {
@@ -18,10 +19,10 @@ const blogDetail = (props) => {
 				<h3>
 					<a href={`/blog/${post_name}`}>{post_title}</a>
 				</h3>
-				<p>
+				<Text>
 					{getExcerpt(post_content)} ... &nbsp;
 					<a className="read-more" href={`/blog/${post_name}`}>[查看全文]</a>
-				</p>
+				</Text>
 			</div>
 		)
 	})
